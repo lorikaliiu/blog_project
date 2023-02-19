@@ -13,7 +13,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        Post::factory()->create([
+        Post::create([
             'user_id' => 1, 
             'cat_id' => 1, 
             'title' => 'Post 1',
