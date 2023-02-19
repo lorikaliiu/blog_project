@@ -14,14 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('index');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+    return view('home');
+})->middleware(['auth', 'verified'])->name('index');
+Route::get('/',[HomeController::class,'index']);
+// Categories
+Route::get('category/{id}/delete',[CategoryController::class,'destroy']);
+Route::resource('category',CategoryController::class);
+// Posts
+Route::get('post/{id}/delete',[PostController::class,'destroy']);
+Route::resource('post',PostController::class);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
