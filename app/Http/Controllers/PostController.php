@@ -8,9 +8,11 @@ use App\Models\Post;
 class PostController extends Controller
 {
    
-    public function index()
+    public function index(Request $request)
     {
-        $data=Post::all();
+        $q=$request->q;
+        $data=Post::where('title','like','%'.$q.'%')->get();
+        // $data=Post::all();
         return view('post.indexPost',[
             'data'=>$data,
         ]);

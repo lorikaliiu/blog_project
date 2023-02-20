@@ -9,11 +9,15 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
    
-    public function index()
+    public function index(Request $request)
     {   
-        $data=Category::all();
+        $q=$request->q;
+        // $data=Category::all();
+    	$Category=Category::where('title','like','%'.$q.'%')->get();
+  
         return view('category.indexCategory',[
-            'data'=>$data,
+            'data'=>$Category,
+            'Category'=>$Category,
             'title'=>'All Categories',
             'meta_desc'=>'This is meta description for all categories'
         ]);
