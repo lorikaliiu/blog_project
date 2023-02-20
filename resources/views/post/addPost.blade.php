@@ -40,10 +40,6 @@
                           <td><input type="text" name="title" class="form-control" /></td>
                       </tr>
                       <tr>
-                          <th>Thumbnail</th>
-                          <td><input type="file" name="post_thumb" /></td>
-                      </tr>
-                      <tr>
                           <th>Image</th>
                           <td><input type="file" name="post_image" /></td>
                       </tr>

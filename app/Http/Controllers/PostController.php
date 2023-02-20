@@ -34,16 +34,7 @@ class PostController extends Controller
             'detail'=>'required',
         ]);
 
-        // Post Thumbnail
-        if($request->hasFile('post_thumb')){
-            $image1=$request->file('post_thumb');
-            $reThumbImage=time().'.'.$image1->getClientOriginalExtension();
-            $dest1=public_path('/imgs/thumb');
-            $image1->move($dest1,$reThumbImage);
-        }else{
-            $reThumbImage='na';
-        }
-
+    
         // Post Full Image
         if($request->hasFile('post_image')){
             $image2=$request->file('post_image');
@@ -58,10 +49,8 @@ class PostController extends Controller
         $post->user_id=0;
         $post->cat_id=$request->category;
         $post->title=$request->title;
-        $post->thumb=$reThumbImage;
         $post->full_img=$reFullImage;
         $post->detail=$request->detail;
-        $post->tags=$request->tags;
         $post->save();
 
         return redirect('post/create')->with('success','Data has been added');
@@ -91,15 +80,7 @@ class PostController extends Controller
             'detail'=>'required',
         ]);
 
-        // Post Thumbnail
-        if($request->hasFile('post_thumb')){
-            $image1=$request->file('post_thumb');
-            $reThumbImage=time().'.'.$image1->getClientOriginalExtension();
-            $dest1=public_path('/imgs/thumb');
-            $image1->move($dest1,$reThumbImage);
-        }else{
-            $reThumbImage=$request->post_thumb;
-        }
+      
 
         // Post Full Image
         if($request->hasFile('post_image')){
@@ -114,10 +95,8 @@ class PostController extends Controller
         $post=Post::find($id);
         $post->cat_id=$request->category;
         $post->title=$request->title;
-        $post->thumb=$reThumbImage;
         $post->full_img=$reFullImage;
         $post->detail=$request->detail;
-        $post->tags=$request->tags;
         $post->save();
 
         return redirect('post/'.$id.'/edit')->with('success','Data has been updated');

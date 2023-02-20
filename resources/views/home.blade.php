@@ -65,7 +65,6 @@
               <th>#</th>
               <th>Category</th>
               <th>Title</th>
-              <th>Thumbail</th>
               <th>Image</th>
               @auth
               <th>Action</th>
@@ -79,7 +78,6 @@
                 <td>{{$post->id}}</td>
                 <td>{{ $post->category->title ?? "Don't have" }}</td>
                 <td>{{$post->title}}</td>
-                <td><img src="{{ asset('imgs/thumb').'/'.$post->thumb }}" width="100" /></td>
                 <td><img src="{{ asset('imgs/full').'/'.$post->full_img }}" width="100" /></td>
                 @auth
                 <td>

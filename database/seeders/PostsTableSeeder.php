@@ -17,7 +17,6 @@ class PostsTableSeeder extends Seeder
             'user_id' => 1, 
             'cat_id' => 1, 
             'title' => 'Post 1',
-            'thumb' => 'thumb1.jpg',
             'full_img' => 'post1.jpg',
             'detail' => 'Lorem ipsum dolor sit amet',
             'created_at' => now(),

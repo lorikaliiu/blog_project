@@ -16,7 +16,6 @@ return new class extends Migration
             $table->integer('user_id');
             $table->integer('cat_id');
             $table->string('title');
-            $table->string('thumb');
             $table->string('full_img');
             $table->text('detail');
             $table->timestamps();

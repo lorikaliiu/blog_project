@@ -18,7 +18,6 @@
               <th>#</th>
               <th>Category</th>
               <th>Title</th>
-              <th>Thumbail</th>
               <th>Image</th>
               <th>Action</th>
             </tr>
@@ -29,7 +28,6 @@
                 <td>{{$post->id}}</td>
                 <td>{{ $post->category->title ?? "Don't have" }}</td>
                 <td>{{$post->title}}</td>
-                <td><img src="{{ asset('imgs/thumb').'/'.$post->thumb }}" width="100" /></td>
                 <td><img src="{{ asset('imgs/full').'/'.$post->full_img }}" width="100" /></td>
                 <td>
                   <a class="btn btn-info btn-sm" href="{{url('post/'.$post->id.'/edit')}}">Update</a>

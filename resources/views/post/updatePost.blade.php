@@ -46,14 +46,6 @@
                   <td><input type="text" value="{{$data->title}}" name="title" class="form-control" /></td>
               </tr>
               <tr>
-                  <th>Thumbail</th>
-                  <td>
-                    <p class="my-2"><img width="80" src="{{asset('imgs/thumb')}}/{{$data->thumb}}" /></p>
-                    <input type="hidden" value="{{$data->thumb}}" name="post_thumb" />
-                    <input type="file" name="post_thumb" />
-                  </td>
-              </tr>
-              <tr>
                   <th>Image</th>
                   <td>
                     <p class="my-2"><img width="80" src="{{asset('imgs/full')}}/{{$data->full_img}}" /></p>
